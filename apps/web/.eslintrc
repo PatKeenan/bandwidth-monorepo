@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "./prettier.config.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./src"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "max-lines": [
+      "error",
+      {"max": 150, "skipBlankLines": true, "skipComments": true}
+    ]
+  }
+}
