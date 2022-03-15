@@ -19,4 +19,4 @@ if ! head -1 "$1" | grep -qE "^(feat|fix|ci|chore|docs|test|style|refactor|perf|
     exit 1
 fi
 MESSAGE=$(head -1 "$1")
-node validate --message
+node validate $MESSAGE
