@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+BRANCH=git rev-parse --abbrev-ref HEAD
+
+if $BRANCH == develop; then
+echo "Aborting: Do not push to develop branch"
+exit 1
+fi
