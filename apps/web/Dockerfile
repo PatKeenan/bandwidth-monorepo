@@ -6,7 +6,7 @@ WORKDIR /home/web
 
 WORKDIR /home/web
 
-COPY  yarn.lock package.json ./
+COPY  package.json ./
 
 COPY  . .
 
