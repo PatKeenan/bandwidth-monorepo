@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 const path = require('path');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
@@ -48,7 +47,7 @@ const config = (env) => ({
         test: /\.css$/i,
         include: [
           path.resolve(__dirname, './src'),
-          path.resolve(__dirname, '../../node_modules/antd/dist'),
+          path.resolve(__dirname, './node_modules/antd/dist'),
         ],
         use: [
           {

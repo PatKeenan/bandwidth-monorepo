@@ -9,6 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "dev:up": "docker-compose up",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
@@ -17,7 +18,7 @@
     "turbo": "latest"
   },
   "engines": {
-    "yarn": ">=1.22.0",
+    "yarn": "1.22.0",
     "node": ">=14.0.0"
   },
   "packageManager": "yarn@1.22.0"

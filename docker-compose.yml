@@ -1,0 +1,51 @@
+version: '3.9'
+services:
+  web:
+    container_name: web
+    build:
+      context: ./apps/web
+      dockerfile: ./Dockerfile
+    environment:
+      DEV_SERVER_PORT: 3001
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./apps/web:/home/node/web/
+      - /home/node/web/node_modules
+  server:
+    container_name: server
+    build:
+      context: ./apps/server
+      dockerfile: ./Dockerfile
+    environment:
+      POSTGRES_USER: patrick
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: db
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./apps/server:/home/node/server/
+      - /home/node/server/node_modules
+    networks:
+      - main-app
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: postgres
+    ports:
+      - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: patrick
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: db
+    volumes:
+      - db:/data/db
+    networks:
+      - main-app
+networks:
+  main-app:
+    driver: bridge
+volumes:
+  db: {}
