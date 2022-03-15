@@ -1,7 +1,22 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$BRANCH" = "develop" ]; then
+    echo 'You are about to commit to the develop branch. Continue? (y|n)'
+    exec < /dev/tty
+    read x
+    if [[ ! "$x" = "y" ]]; then
+        echo "Aborting commit..."
+        exit  1
+    fi
+fi
 if ! head -1 "$1" | grep -qE "^(feat|fix|ci|chore|docs|test|style|refactor|perf|build|revert)(\(.+?\))?: .{1,}$"; then
-    echo head -1 "$1"
+    echo
+    echo "Aborting: Commit message does not follow repo guidlines for messages."
+    echo
     exit 1
 fi
+MESSAGE=$(head -1 "$1")
+node validate --message
