@@ -16,9 +16,10 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": "^7.0.0",
+    "inquirer": "^8.2.1",
     "prettier": "^2.5.1",
-    "turbo": "latest",
-    "husky": "^7.0.0"
+    "turbo": "latest"
   },
   "engines": {
     "yarn": "1.22.0",

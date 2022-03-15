@@ -4,4 +4,6 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 MESSAGE=$(head -1 "$1")
-node validate -b="$BRANCH" -m="$MESSAGE" 
+
+exec < /dev/tty
+node validate-git "$BRANCH" "$MESSAGE" 
