@@ -4,4 +4,4 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 MESSAGE=$(head -1 "$1")
-node validate --branch="$BRANCH" --message="$MESSAGE" 
+node validate -b="$BRANCH" -m="$MESSAGE" 
