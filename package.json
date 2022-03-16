@@ -13,11 +13,16 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.0",
     "inquirer": "^8.2.1",
+    "lint-staged": "^12.3.6",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
@@ -25,5 +30,10 @@
     "yarn": "1.22.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@1.22.0"
+  "packageManager": "yarn@1.22.0",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
