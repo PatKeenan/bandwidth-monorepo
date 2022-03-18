@@ -19,7 +19,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog": "3.3.0",
     "husky": "^7.0.0",
     "inquirer": "^8.2.1",
     "lint-staged": "^12.3.6",
@@ -33,7 +33,7 @@
   "packageManager": "yarn@1.22.0",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }
